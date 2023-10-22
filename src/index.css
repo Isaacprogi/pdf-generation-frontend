@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media print {
+  html, body {
+    height: 100vh; /* Use 100% here to support printing more than a single page*/
+    margin: 0 !important;
+    padding: 0 !important;
+
+  }
+}
+
+@media print {
+  
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 1rem;
+    max-width: 595px;
+    margin: 0 auto;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 595px;
+    margin: 0 auto;
+  }
+
+  .footer .page-number::after {
+    counter-increment: page;
+    content:"Page " counter(page); 
+  }
+}
