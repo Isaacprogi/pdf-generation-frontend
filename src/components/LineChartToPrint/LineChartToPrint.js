@@ -61,7 +61,7 @@ const LineChartToPrint = ({ crime, chartData }) => {
                     </div>
                     <div className='px-[1.5rem] relative flex-auto py-[1rem]'>
                     <div className='rotate-[270deg] text-[9px] font-[500] absolute -left-[0] top-1/2 -translate-y-1/2 text-black'>Arrests</div>
-                        <div  className='w-full mx-auto rounded-[12.33px] p-2 h-[151px] flex items-center justify-center bg-white'>
+                        <div  className='w-[540px] overflow-hidden mx-auto rounded-[12.33px] p-2 h-[151px] flex items-center justify-center bg-white'>
                             <Line data={chartData} options={options} />
                         </div>
                     </div>
