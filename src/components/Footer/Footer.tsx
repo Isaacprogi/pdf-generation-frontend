@@ -10,7 +10,7 @@ const Footer = ({history,date}:{date?:string,history?:Boolean}) => {
       <div className="pb-4 text-[9px] font-[900] flex items-center justify-between left-0 w-full ">
         <span className="text-[#1463FF]">{history?historyDate:printDate()}</span>
         <span className="text-[#090E24]">
-          RealAssist Property Report | <span className='text-[#626E99]'>
+          RealAssist Property Report | Page <span className='text-[#626E99]'>
           <span className='page-number'></span> of 25
           </span>
         </span>

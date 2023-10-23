@@ -41,6 +41,6 @@ body {
 
   .footer .page-number::after {
     counter-increment: page;
-    content:"Page " counter(page); 
+    content:counter(page); 
   }
 }
