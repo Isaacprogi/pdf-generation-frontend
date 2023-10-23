@@ -28,7 +28,7 @@ const Crime: React.FC<CrimeProps> = ({ charts, setCharts, data }) => {
     
     try {
       setDeleteLoading(true)
-      await axios.delete(`http://localhost:8000/api/chart/${id}`)
+      await axios.delete(`https://report-generator-api-real-assist.onrender.com/api/chart/${id}`)
       setCharts(charts.filter((chart: CrimeProps['data']) => chart?._id !== id))
       setDeleteLoading(false)
     } catch (error) {

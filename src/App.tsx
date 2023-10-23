@@ -97,7 +97,7 @@ const App = () => {
       })
       try {
         setgeneratePdfLoading(true);
-        await axios.post('http://localhost:8000/api/chart', {
+        await axios.post('https://report-generator-api-real-assist.onrender.com/api/chart', {
           chartData: newData,
           crime: selectedOption.label,
         });

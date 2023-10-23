@@ -15,7 +15,7 @@ const Modal = ({ setModalOpen, modalOpen}: {modalOpen: Boolean, setModalOpen: Re
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/chart');
+            const response = await axios.get('https://report-generator-api-real-assist.onrender.com/api/chart');
             console.log(response.data)
             setCharts(response.data)
         } catch (error) {
