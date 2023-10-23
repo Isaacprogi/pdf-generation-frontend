@@ -20,6 +20,7 @@ interface CrimeProps {
 
 const Crime: React.FC<CrimeProps> = ({ charts, setCharts, data }) => {
   const [deleteLoading, setDeleteLoading] = useState<boolean>(false)
+  const [viewLoading, setViewLoading] = useState<boolean>(false)
   const utcTimestamp = data.createdAt; 
  const userLocalTime = new Date(utcTimestamp).toLocaleString();
 
@@ -40,7 +41,14 @@ const Crime: React.FC<CrimeProps> = ({ charts, setCharts, data }) => {
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
-  })
+    onBeforeGetContent: () => {
+      setViewLoading(true);
+    },
+    onAfterPrint: () => {
+      setViewLoading(false);
+    },
+  });
+
 
 
   const chartData: ChartData = {
@@ -80,8 +88,13 @@ const Crime: React.FC<CrimeProps> = ({ charts, setCharts, data }) => {
         <div className="flex items-center  gap-[.5rem] justify-start ">
           <button
             onClick={handlePrint}
+            disabled={viewLoading}
             className='rounded-sm w-[4rem] flex items-center justify-center font-[700] text-white bg-blue-800 hover:bg-blue-700 duration-300 cursor-pointer h-[2rem] px-[.8rem]'>
-              View
+               {viewLoading ? (
+              <ClipLoader size={15} color={"white"} /> 
+            ) : (
+              'View'
+            )}
           </button>
 
           <button
