@@ -12,6 +12,7 @@ const LineChart = ({ crime, chartData }) => {
       },
     },
     maintainAspectRatio: false,
+    responsive: true,
     scales: {
       x: {
         type: 'category',

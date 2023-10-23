@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
 @media print {
   html, body {
     height: 100vh; /* Use 100% here to support printing more than a single page*/

@@ -5,7 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      fontFamily: {
+        poppins: ['Poppins', 'sans'],
+      },
     },
     gridTemplateColumns:{
       'dextop-up':'25rem auto',
